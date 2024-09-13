@@ -30,24 +30,40 @@ function hoverReward() {
     });
 }
 
-// Llamamos a las funciones para activar las animaciones
+
 blinkTitle();
 fadeInImage();
 hoverReward();
 
-        // Obtener el elemento de audio
-        const audio = document.getElementById('miAudio');
 
-        // Reproducir el audio cuando la página se carga
-        window.onload = () => {
-            audio.play();
-        };
+  const audio = document.getElementById('miAudio');
+  const controlBoton = document.getElementById('controlBoton');
 
-        // Reproducir el audio en loop cuando se hace clic en cualquier parte de la página
-        document.body.addEventListener('click', () => {
-            if (audio.paused) {
-                audio.play();
-            }
-        });
+
+  window.onload = () => {
+      audio.play();
+  };
+
+
+  controlBoton.addEventListener('click', (event) => {
+   
+      event.stopPropagation();
+
+      if (audio.paused) {
+          audio.play();
+          controlBoton.textContent = 'Pausar';
+      } else {
+          audio.pause();
+          controlBoton.textContent = 'Reproducir';
+      }
+  });
+
+ 
+  document.body.addEventListener('click', (event) => {
+    
+      if (audio.paused && event.target !== controlBoton) {
+          audio.play();
+      }
+  });
 
 
