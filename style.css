@@ -60,6 +60,21 @@ h2 {
   text-transform: capitalize;
 }
 
+ /* Estilos básicos para el botón */
+ #controlBoton {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+#controlBoton:hover {
+  background-color: #45a049;
+}
+
 /* Media Queries para pantallas medianas (tablets) */
 @media (max-width: 768px) {
   .poster {
