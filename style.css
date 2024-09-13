@@ -83,7 +83,7 @@ h2{
 }
 
 /* Media Queries para pantallas pequeñas (móviles) */
-@media (max-width: 480px) {
+@media (max-width: 400px) {
     body {
         flex-direction: column; /* Alineamos los elementos en columna */
     }
